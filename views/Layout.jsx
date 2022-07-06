@@ -14,14 +14,7 @@ module.exports = function Layout({ children, title }) {
 
       <body>
         <div className="container">
-          <header role="banner">
-            <a className="title" href="/">Karaoke</a>
-            <a href="/new" className="signup button">Sign up to Karaoke</a>
-          </header>
           {children}
-          <footer role="siteinfo">
-            <span className="legal">Important Legal Information</span>
-          </footer>
         </div>
       </body>
 
