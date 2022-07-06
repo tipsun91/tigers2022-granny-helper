@@ -37,7 +37,7 @@ module.exports = function Reg({ errors }) {
 
             <label htmlFor="password_input">Пароль:</label>
             <input id="password_input" name="user[password]" type="password" value="" />
-
+            <br />
             <input type="submit" value="Зарегистрироваться" className="btn btn-primary" />
           </form>
         </div>
