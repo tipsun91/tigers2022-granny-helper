@@ -1,13 +1,14 @@
 require('dotenv').config();
+const SERVER_PORT = process.env.SERVER_PORT ?? 3000;
 const app = require('express')();
-const sequelize = require('sequelize');
 require('./config/configApp')(app);
-app.listen(process.env.PORT ?? 3000, () => {
-  console.log(`server started at port: ${app.port}`);
+const { sequelize } = require('./db/models');
+app.listen(SERVER_PORT, async () => {
+  console.log(`Server started at port: ${SERVER_PORT}`);
   try {
     await sequelize.authenticate();
-    console.log('База данных ОК!')
+    console.log('Connection has been established successfully.');
   } catch (error) {
-    console.log(error.message); // new Error('mymessage');
+    console.error('Unable to connect to the database:', error);
   }
 });
