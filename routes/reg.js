@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Reg  = require('../views/Reg');
+// const Reg  = require('../views/Reg');
 
 router.get('/', async (req, res) => {
   res.renderComponent(Reg);
