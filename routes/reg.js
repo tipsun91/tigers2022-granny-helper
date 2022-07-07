@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-// const Reg  = require('../views/Reg');
+const Reg  = require('../views/Reg');
 
 router.get('/', async (req, res) => {
   res.renderComponent(Reg);
@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
   try {
     if (res.locals.user) {
       res.redirect('/profile');
+      return;
     }
 
     const { name, role, password }  = req.body;
