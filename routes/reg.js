@@ -6,8 +6,29 @@ router.get('/', async (req, res) => {
   res.renderComponent(Reg);
 });
 
+const { User } = require('../db/models');
+const bcrypt = require('bcrypt');
 router.post('/', async (req, res) => {
-  res.json(req.body).end();
+  try {
+    if (res.locals.user) {
+      res.redirect('/profile');
+    }
+
+    const { name, role, password }  = req.body;
+
+    if(await User.isExists(name)){
+      res.redirect('/reg');
+      return;
+    }
+
+    const hash = await bcrypt.hash(password, 2);
+    const user = await User.create({ name, role, password:hash });
+    await user.save();
+    req.session.user = user;
+    res.redirect('/profile');
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 module.exports = router;
