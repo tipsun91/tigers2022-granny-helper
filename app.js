@@ -3,6 +3,12 @@ const SERVER_PORT = process.env.SERVER_PORT ?? 3000;
 const app = require('express')();
 require('./config/configApp')(app);
 const { sequelize } = require('./db/models');
+// const  upload  = require('./public/loading');
+//
+//  upload('#file', {
+//   multi: true,
+//   accept: ['.png', '.jpg', '.jpeg', '.gif']
+// })
 app.listen(SERVER_PORT, async () => {
   console.log(`Server started at port: ${SERVER_PORT}`);
   try {

@@ -1,5 +1,11 @@
-# Database configurations
-*/database.json
+# Custom
+.vscode
+package-lock.json
+db/config/*
+sessions
+sessions/*.json
+uploads
+uploads/*
 
 # Logs
 logs

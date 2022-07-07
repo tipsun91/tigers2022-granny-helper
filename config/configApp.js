@@ -33,7 +33,9 @@ module.exports = function configApp(app) {
   app.use(require('../middlewares/reactSsr'));
 
   // Импорт маршрутов.
-  app.use('/',     require('../routes/index')); // Основные странички
-  app.use('/reg',  require('../routes/reg'));   // Регистрация
-  app.use('/auth', require('../routes/auth'));  // Авторизация
+  app.use('/', require('../routes/index'));   // Основные странички
+  app.use('/reg', require('../routes/reg'));     // Регистрация
+  app.use('/auth', require('../routes/auth'));    // Авторизация
+  app.use('/profile', require('../routes/profile')); // Профиль
+  app.use('/load', require('../routes/loading')) // загрузка картинки
 }
