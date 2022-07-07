@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     { logger: (m) => console.log(m) },
   ).then(({ data: { text } }) => {
     console.log(text);
-  });
+  });l
   res.send(text);
 });
 
