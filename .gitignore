@@ -1,14 +1,11 @@
-# package-lock
-package-lock.json
-
-# sessions
-sessions/
-
-# VS CODE
+# Custom
 .vscode
-
-# Database configurations
+package-lock.json
 */database.json
+sessions
+sessions/*.json
+uploads
+uploads/*
 
 # Logs
 logs
