@@ -4,7 +4,10 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    GRANDMOTHER = 'gm';
+
+    static get GRANDMOTHER() { return 'gm'; }
+    static get GRANDSON() { return 'gs'; }
+
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -19,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
       type: DataTypes.TEXT,
+      validate: {
+        is: /^[a-zA-Zа-яА-Я]{3,20}$/,
+      },
     },
     password: {
       allowNull: false,
@@ -27,6 +33,9 @@ module.exports = (sequelize, DataTypes) => {
     role: {
       allowNull: false,
       type: DataTypes.TEXT,
+      validate: [
+        [User.GRANDMOTHER, User.GRANDSON]
+      ],
     },
   }, {
     sequelize,
