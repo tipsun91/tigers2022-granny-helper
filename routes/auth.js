@@ -9,6 +9,10 @@ const { User } = require('../db/models');
 const bcrypt = require('bcrypt');
 router.post('/', async (req, res) => {
   try {
+    if (res.locals.user) {
+      res.redirect('/profile');
+    }
+
     const { name, password } = req.body;
     const user = await User.isExists(name);
 
