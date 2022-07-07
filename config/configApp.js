@@ -19,13 +19,13 @@ module.exports = function configApp(app) {
   app.use(cookieParser());
   app.use(session({
     store: new FileStore(),
-    name: 'user_sid', 				// Имя куки для хранения id сессии. По умолчанию - connect.sid
+    name: process.env.SESSION_COOKIE ?? 'session',  // Имя куки для хранения id сессии. По умолчанию - connect.sid
     secret: process.env.SESSION_SECRET ?? 'secret',	// Секретное слово для шифрования, может быть любым
-    resave: false, 				// Пересохранять ли куку при каждом запросе
-    saveUninitialized: false, 		// Создавать ли сессию без инициализации ключей в req.session
+    resave: false, 				                          // Пересохранять ли куку при каждом запросе
+    saveUninitialized: false, 		                  // Создавать ли сессию без инициализации ключей в req.session
     cookie: {
-      maxAge: 1000 * 60 * 60 * 12, // Срок истечения годности куки в миллисекундах
-      httpOnly: true, 				// Серверная установка и удаление куки, по умолчанию true
+      maxAge: 1000 * 60 * 60 * 12,                  // Срок истечения годности куки в миллисекундах
+      httpOnly: true, 				                      // Серверная установка и удаление куки, по умолчанию true
     }
   }));
   // Check
@@ -33,5 +33,7 @@ module.exports = function configApp(app) {
   app.use(require('../middlewares/reactSsr'));
 
   // Импорт маршрутов.
-  app.use('/', require('../routes/index')); //основные странички
+  app.use('/',     require('../routes/index')); // Основные странички
+  app.use('/reg',  require('../routes/reg'));   // Регистрация
+  app.use('/auth', require('../routes/auth'));  // Авторизация
 }
