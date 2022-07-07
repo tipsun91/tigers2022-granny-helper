@@ -1,25 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
 
 body {
-  background-color: rgb(253, 253, 253);
-  /* background-image: url(https://static.vecteezy.com/system/resources/previews/003/185/405/original/geometric-pattern-design-modern-floral-white-background-free-vector.jpg); */
+  /* background-color: rgb(253, 253, 253); */
+  background-image: url(/img/2.jpg);
+  /* font-family: 'Comfortaa', cursive; */
 }
 
 /* ------------ reg ------------ */
 .reg {
+  font-family: 'Comfortaa', cursive;
   display: flex;
   justify-content: center;
   text-align: center;
-  /* border: 3px solid rgb(19, 192, 169); */
+  /* border: 3px solid rgb(230, 222, 1); */
   border-radius: 30px;
-  margin: 20px 500px;
-  box-shadow: 0 0 40px rgba(20, 161, 133, 0.797);
+  background-color: rgb(253, 253, 253);
+  opacity: 80%;
+  margin: 50px 500px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.797);
   min-height: 500px;
   font-size: 20px;
   font-family: sans-serif;
   letter-spacing: 2px;
-  color: rgb(15, 50, 48);
-  ;
+  color: rgb(0, 8, 8);
 }
 
 .reg_content {
@@ -35,7 +38,9 @@ body {
   width: 250px;
   height: 30px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
 }
 
 .reg_input_radio {
@@ -44,9 +49,9 @@ body {
 }
 
 .btn {
-  width: 260px;
+  width: 270px;
   height: 60px;
-  background-color: rgb(187, 96, 170);
+  background-color: rgb(193, 51, 167);
   color: rgb(255, 255, 255);
   font-size: 20px;
   border: none;
@@ -57,5 +62,9 @@ body {
 }
 
 .btn:hover {
-  background-color: rgb(1, 150, 135);
+  background-color: rgb(2, 179, 162);
+}
+
+.h1 {
+  text-transform: uppercase;
 }
