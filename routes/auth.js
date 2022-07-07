@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
       return;
     }
 
-    if(!bcrypt.compare(password, user.password)){
+    if(! await bcrypt.compare(password, user.password)){
       res.redirect('/auth');
       return;
     }
