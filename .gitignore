@@ -1,7 +1,7 @@
 # Custom
 .vscode
 package-lock.json
-*/database.json
+db/config/*
 sessions
 sessions/*.json
 uploads
