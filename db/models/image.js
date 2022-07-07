@@ -27,9 +27,13 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       type: DataTypes.TEXT,
     },
-    blob: {
-      allowNull: false,
+    image_blob: {
+      allowNull: true,
       type: DataTypes.BLOB,
+    },
+    image_url: {
+      allowNull: true,
+      type: DataTypes.TEXT,
     },
     text: {
       allowNull: false,
