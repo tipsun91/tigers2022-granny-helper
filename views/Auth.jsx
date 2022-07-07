@@ -5,7 +5,7 @@ const Layout = require('./Layout');
 module.exports = function Auth({ errors }) {
   return (
     <Layout title="Авторизация">
-      <h1>Авторизация</h1>
+
 
       <main className="form-wrapper mb-3" role="main">
 
@@ -20,19 +20,26 @@ module.exports = function Auth({ errors }) {
           </div>
         )}
 
-        <div className="mb-3">
+        <div className="reg">
+          <br />
           <form method="post" action="/auth">
+            <br />
+            <h1 className='h1 reg_content'>Авторизация</h1>
             <div className="mb-3">
-              <label htmlFor="name_input" className="form-label">Имя</label>
-              <input className="form-control" id="name_input" name="name" type="text" value="" />
+              <label htmlFor="name_input" className="reg_content reg_text form-label">Имя</label>
+              <br />
+              <input className="reg_content reg_input form-control" id="name_input" name="name" type="text" value="" />
             </div>
 
             <div className="mb-3">
-              <label htmlFor="password_input" className="form-label">Пароль</label>
-              <input className="form-control" id="password_input" name="password" type="password" value="" />
+              <label htmlFor="password_input" className="reg_content reg_text form-label">Пароль</label>
+              <br />
+              <input className="reg_content reg_input form-control" id="password_input" name="password" type="password" value="" />
             </div>
+            <br />
+            <button className="reg_content btn btn-primary" type="submit" value="Авторизоваться">Авторизоваться</button>
 
-            <input type="submit" value="Авторизоваться" className="btn btn-primary" />
+            {/* <input type="submit" value="Авторизоваться" className="btn btn-primary" /> */}
           </form>
         </div>
       </main>

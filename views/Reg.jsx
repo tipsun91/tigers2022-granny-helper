@@ -48,7 +48,7 @@ module.exports = function Reg({ errors }) {
         <div className="reg">
           {/* <h1 className='font-monospace'>Регистрация</h1> */}
           <form className='reg_form' method="post" action="/reg">
-            <h1 className='reg_content'>Регистрация</h1>
+            <h1 className='h1 reg_content'>Регистрация</h1>
             <br />
             <label className='reg_content reg_text' htmlFor="name_input">Имя:</label>
             <br />
@@ -73,7 +73,6 @@ module.exports = function Reg({ errors }) {
           </form>
         </div>
       </main>
-
 
     </Layout>
   );
