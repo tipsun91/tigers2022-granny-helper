@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     req.session.user = user;
     res.redirect('/profile');
   } catch (error) {
-    res.status(500).json({ errorMessage: error.message });
+    res.status(500).json(error);
   }
 });
 
