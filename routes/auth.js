@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
   try {
     if (res.locals.user) {
       res.redirect('/profile');
+      return;
     }
 
     const { name, password } = req.body;
