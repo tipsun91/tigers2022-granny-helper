@@ -1,4 +1,5 @@
 'use strict';
+const { userInfo } = require('os');
 const {
   Model
 } = require('sequelize');
@@ -7,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
 
     static get GRANDMOTHER() { return 'gm'; }
     static get GRANDSON() { return 'gs'; }
+
+    static async isExists(name) {
+      return await this.findOne({ where: { name } });
+    }
 
     /**
      * Helper method for defining associations.
@@ -23,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       type: DataTypes.TEXT,
       validate: {
-        is: /^[a-zA-Zа-яА-Я]{3,20}$/,
+        is: /^[a-zA-Zа-яА-ЯёЁ]{3,20}$/
       },
     },
     password: {
@@ -33,9 +38,11 @@ module.exports = (sequelize, DataTypes) => {
     role: {
       allowNull: false,
       type: DataTypes.TEXT,
-      validate: [
-        [User.GRANDMOTHER, User.GRANDSON]
-      ],
+      validate: {
+        isIn: [
+          [User.GRANDMOTHER, User.GRANDSON]
+        ],
+      },
     },
   }, {
     sequelize,

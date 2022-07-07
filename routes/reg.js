@@ -6,22 +6,24 @@ router.get('/', async (req, res) => {
   res.renderComponent(Reg);
 });
 
+const { User } = require('../db/models');
+const bcrypt = require('bcrypt');
 router.post('/', async (req, res) => {
-  try{
-    const { name, role, password } = req.body;
-    const user = await User.findOne({ where: { name } });
+  try {
+    const { name, role, password }  = req.body;
 
-    if(user){
-      res.json({status: 'notok', errorMessage: 'Пользователь уже зарегистрирован'})
+    if(await User.isExists(name)){
+      res.redirect('/reg');
       return;
     }
 
-    const hash = await bcrypt.hash(req.body.password, 10);
-    await User.create({ name, role, password: hash });
-
-    res.json({ status: 'ok' });
-  } catch(err){
-    res.status(500).json({ errorMessage: err.message });
+    const hash = await bcrypt.hash(password, 2);
+    const user = await User.create({ name, role, password:hash });
+    await user.save();
+    req.session.user = user;
+    res.redirect('/profile');
+  } catch (error) {
+    res.status(500).json({ errorMessage: error.message });
   }
 });
 
