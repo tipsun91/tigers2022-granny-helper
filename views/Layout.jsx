@@ -7,8 +7,8 @@ module.exports = function Layout({ children, title }) {
 
       <head>
         <meta charSet="UTF-8" />
-        {/*<link rel="stylesheet" href="/css/index.css" /> */}
-        {/* <script defer src="/js/application.js" /> */}
+        {/* <link rel="stylesheet" href="/css/index.css" /> */}
+        <script defer src="/js/client.js" />
         <title>{title}</title>
       </head>
 
