@@ -7,7 +7,22 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  res.json(req.body).end();
+  try{
+    const { name, role, password } = req.body;
+    const user = await User.findOne({ where: { name } });
+
+    if(user){
+      res.json({status: 'notok', errorMessage: 'Пользователь уже зарегистрирован'})
+      return;
+    }
+
+    const hash = await bcrypt.hash(req.body.password, 10);
+    await User.create({ name, role, password: hash });
+
+    res.json({ status: 'ok' });
+  } catch(err){
+    res.status(500).json({ errorMessage: err.message });
+  }
 });
 
 module.exports = router;
