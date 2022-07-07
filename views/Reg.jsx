@@ -5,9 +5,9 @@ const Layout = require('./Layout');
 module.exports = function Reg({ errors }) {
   return (
     <Layout title="Регистрация">
-      <h1>Регистрация</h1>
+      {/* <h1>Регистрация</h1> */}
 
-      <main className="form-wrapper container" role="main">
+      <main className="form-wrapper md-3" role="main">
 
         {errors && (
           <div className="errors-wrapper container">
@@ -20,9 +20,11 @@ module.exports = function Reg({ errors }) {
           </div>
         )}
 
-        <div className="container">
+        <div className="md-3 shadow bg-white rounded">
+          <h1 className='font-monospace'>Регистрация</h1>
           <form method="post" action="/reg">
             <label htmlFor="name_input">Имя:</label>
+            <br />
             <input id="name_input" name="user[name]" type="text" value="" />
 
             <div className="form-check">
@@ -36,6 +38,7 @@ module.exports = function Reg({ errors }) {
             </div>
 
             <label htmlFor="password_input">Пароль:</label>
+            <br />
             <input id="password_input" name="user[password]" type="password" value="" />
             <br />
             <input type="submit" value="Зарегистрироваться" className="btn btn-primary" />
