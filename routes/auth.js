@@ -6,26 +6,27 @@ router.get('/', async (req, res) => {
 });
 
 const { User } = require('../db/models');
+const bcrypt = require('bcrypt');
 router.post('/', async (req, res) => {
   try {
     const { name, password } = req.body;
-    const user = await User.findOne({ where: { name } });
+    const user = await User.isExists(name);
 
     if(!user) {
-      res.json({status: 'notok', errorMessage: 'Такого пользователя не существует'}).end();
+      res.redirect('/reg');
       return;
     }
 
     if(!bcrypt.compare(password, user.password)){
-      res.json({ status: 'notok', errorMessage: 'Неверный пароль!'}).end();
+      res.redirect('/auth');
       return;
     }
 
     req.session.user = user;
-    res.status(200).json({ status: 'ok' }).redirect('/').end();
+    res.redirect('/profile');
     return;
-  } catch(err){
-    res.status(500).json({ errorMessage: err.message }).end();
+  } catch(error){
+    res.status(500).json(error);
   }
 });
 
