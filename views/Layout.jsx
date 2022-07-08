@@ -10,10 +10,10 @@ module.exports = function Layout({ children, title }) {
       <head>
         <meta charSet="UTF-8" />
 
+        <link rel="stylesheet" href="/css/bootstrap.min.css.map" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <script defer src="/js/bootstrap.bundle.min.map" />
         <script defer src="/js/bootstrap.bundle.min.js" />
-
-        <script defer src="/js/client.js" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -21,14 +21,12 @@ module.exports = function Layout({ children, title }) {
 
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/style.css" />
+
+        <script defer src="/js/client.js" />
         <title>{title}</title>
       </head>
 
-      <body>
-        <div className="container">
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
 
     </html>
   );
