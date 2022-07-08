@@ -10,8 +10,8 @@ module.exports = function StartPage() {
           <div className='start_title'>
             <h1 className='h1 reg_content h1_center'>Granny Helper</h1>
           </div>
-          <div>
-            <img className='start_img' src="img/wat.jpeg" alt="img" />
+          <div className='start_img'>
+            {/* <img className='start_img' src="/img/wat.jpeg" alt="img" /> */}
           </div>
           <div className='start_btn'>
             <button className="reg_content btn_log" type="button" id="start1"><a href='/auth'>Вход</a></button>

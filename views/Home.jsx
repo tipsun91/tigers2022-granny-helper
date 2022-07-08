@@ -8,6 +8,7 @@ module.exports = function Home({ text, user }) {
     <Layout>
       <NavMenu user={user} />
       <div className="container">
+        <img className='start_img' src="img/wat.jpeg" alt="img" />
         <div className="card">
           <form action="/load" method="get" encType="multipart/form-data">
             <input type="file" id="file" className="filedata" />
