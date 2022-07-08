@@ -1,23 +1,21 @@
 /* eslint-disable jsx-a11y/aria-role */
 const React = require('react');
-
+const NavMenu = require('./NavMenu');
 const Layout = require('./Layout');
 
-module.exports = function Home({ text }) {
+module.exports = function Home({ text, user }) {
   return (
     <Layout>
-      <h1>Wellcome!</h1>
+      <NavMenu user={user} />
+      <div className="container">
+        <div className="card">
+          <form action="/load" method="get" encType="multipart/form-data">
+            <input type="file" id="file" className="filedata" />
+          </form>
+        </div>
+      </div>
+      <script src="../public/load.js" />
 
-      <select id="langs">
-        <option value="rus" selected>Русский</option>
-        <option value="eng">English</option>
-      </select>
-
-      <input type="file" id="file" />
-
-      <div id="log">{text}</div>
-
-      <button type="button" id="start">Начать обработку</button>
     </Layout>
   );
 };
