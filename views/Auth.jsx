@@ -37,7 +37,7 @@ module.exports = function Auth({ errors }) {
               <input className="reg_content reg_input form-control" id="password_input" name="password" type="password" value="" />
             </div>
             <br />
-            <button className="reg_content btn btn-primary" type="submit" value="Авторизоваться">Авторизоваться</button>
+            <button className="reg_content btn_reg_log btn-primary" type="submit" value="Авторизоваться">Авторизоваться</button>
 
             {/* <input type="submit" value="Авторизоваться" className="btn btn-primary" /> */}
           </form>
