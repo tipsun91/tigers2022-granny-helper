@@ -8,8 +8,8 @@ module.exports = function NavMenu({ user }) {
           <a className="navbar-brand">Бабушка Helper</a>
           <form className="d-flex" role="search">
 
-            <button className="btn btn-outline-success" type="submit">Загрузить</button>
-            <button className="btn btn-outline-success" type="submit">Выйти</button>
+            <button className="btn btn-outline-success" type="submit"><a href="/load">Загрузить</a></button>
+            <button className="btn btn-outline-success" type="submit"><a href="/">Выйти</a></button>
           </form>
         </div>
       </nav>
