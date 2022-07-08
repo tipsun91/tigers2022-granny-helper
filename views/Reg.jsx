@@ -68,7 +68,7 @@ module.exports = function Reg({ errors }) {
             <br />
             <input className="reg_content reg_input" id="password_input" name="password" type="password" value="" />
             <br />
-            <button className="reg_content btn btn-primary" type="submit" value="Зарегистрироваться">Зарегистрироваться</button>
+            <button className="reg_content btn" type="submit" value="Зарегистрироваться">Зарегистрироваться</button>
             {/* <input className="reg_content btn btn-primary" type="submit" value="Зарегистрироваться" /> */}
           </form>
         </div>
