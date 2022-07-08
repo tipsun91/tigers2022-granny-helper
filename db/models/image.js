@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       isUrl: true,
     },
     text: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.TEXT,
     },
   }, {

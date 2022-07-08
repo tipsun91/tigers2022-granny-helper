@@ -1,20 +1,19 @@
 const router = require('express').Router();
-const Tesseract = require('tesseract.js');
 const path = require('path');
-const { text } = require('express');
-const Home = require('../views/Home');
+// const fs = require('fs/promises');
+const Tesseract = require('tesseract.js');
 
 router.get('/', async (req, res) => {
-  const file = path.resolve('public/blins.png');
-
+  
+  const filePath = path.resolve('uploads/eng_bw.png');
   Tesseract.recognize(
-    file,
+    filePath,
     'eng+rus',
-    { logger: (m) => console.log(m) },
-  ).then(({ data: { text } }) => {
+    { logger: m => console.log(m) }
+  ).then( async ({ data: { text } }) => {
     console.log(text);
-  });l
-  res.send(text);
+    res.end(text);
+  });
 });
 
 module.exports = router;

@@ -2,6 +2,11 @@ const router = require('express').Router();
 
 const Auth  = require('../views/Auth');
 router.get('/', async (req, res) => {
+  if (res.locals.user) {
+    res.redirect('/profile');
+    return;
+  }
+
   res.renderComponent(Auth);
 });
 

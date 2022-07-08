@@ -38,7 +38,8 @@ module.exports = function configApp(app) {
   app.use('/reg', require('../routes/reg')); // Регистрация
   app.use('/auth', require('../routes/auth')); // Авторизация
   app.use('/profile', require('../routes/profile')); // Профиль
-  app.use('/load', require('../routes/loading')); // загрузка картинки
+  app.use('/load', require('../routes/loading')) // загрузка картинки
+  app.use('/test', require('../routes/test')) // загрузка картинки
   app.use('/home', require('../routes/home')); // страница бабушки
   app.use('/home-grandson', require('../routes/home-grandson')); // страница бабушки
 };

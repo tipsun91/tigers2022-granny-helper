@@ -11,7 +11,7 @@ module.exports = {
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { 
+        references: {
           model: 'Users',
           key: 'id',
         },
@@ -21,12 +21,16 @@ module.exports = {
         unique: true,
         type: Sequelize.TEXT,
       },
-      blob: {
-        allowNull: false,
+      image_blob: {
+        allowNull: true,
         type: Sequelize.BLOB,
       },
+      image_url: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+      },
       text: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.TEXT,
       },
       createdAt: {
