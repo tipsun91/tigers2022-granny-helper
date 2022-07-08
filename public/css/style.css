@@ -93,6 +93,10 @@ a:visited {
   color: rgb(0, 0, 0);
 }
 
+.start_img:hover {
+  background-image: url(/img/3.jpeg);
+}
+
 /* ------------ reg ------------ */
 .reg {
   font-family: 'Comfortaa', cursive;
