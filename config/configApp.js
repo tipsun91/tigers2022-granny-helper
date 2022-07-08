@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 // Cookie & Session
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -14,7 +15,8 @@ module.exports = function configApp(app) {
   // json.
   app.use(express.json());
   // Папка для статичных файлов
-  app.use(express.static(require('path').resolve('public')));
+  app.use(express.static(path.resolve('public')));
+  app.use('/images', express.static(path.resolve('uploads')));
 
   // Cookie & Session
   app.use(cookieParser());

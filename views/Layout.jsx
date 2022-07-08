@@ -15,14 +15,14 @@ module.exports = function Layout({ children, title }) {
         <script defer src="/js/bootstrap.bundle.min.map" />
         <script defer src="/js/bootstrap.bundle.min.js" />
 
-        <script defer src="/js/client.js" />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&family=Josefin+Sans:ital,wght@0,300;0,700;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" />
 
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/style.css" />
+
+        <script defer src="/js/client.js" />
         <title>{title}</title>
       </head>
 
