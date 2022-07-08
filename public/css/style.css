@@ -164,7 +164,22 @@ a:visited {
   margin-right: 0;
 }
 
-.btn:hover {
+.btn1 {
+  width: 270px;
+  height: 60px;
+  background-color: rgb(81, 116, 80);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  padding: 5px 10px;
+}
+
+
+.btn:hover,
+.btn1:hover {
   background-color: rgb(2, 179, 162);
 }
 
