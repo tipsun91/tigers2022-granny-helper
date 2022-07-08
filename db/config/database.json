@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "custom",
-    "password": 10010110,
-    "database": "customers_project",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "db_grand",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
