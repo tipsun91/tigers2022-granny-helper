@@ -3,6 +3,11 @@ const router = require('express').Router();
 const Reg  = require('../views/Reg');
 
 router.get('/', async (req, res) => {
+  if (res.locals.user) {
+    res.redirect('/profile');
+    return;
+  }
+
   res.renderComponent(Reg);
 });
 
