@@ -21,30 +21,17 @@ const element = (tag, classes = [], content) => {
     return node
 }
 
-function noop() {}
+// function noop() {}
 
-module.exports = function upload(selector, options = {}) {
     let files = []
-    const onUpload = options.onUpload ?? noop
-    const input = document.querySelector(selector)
+    // const onUpload = options.onUpload ?? noop
+    const input = document.querySelector('#file')
     const preview = element('div', ['preview'])
-    const open = element('button', ['btn'], 'Открыть')
-    const upload = element('button', ['btn', 'primary'], 'Загрузить')
+    // const open = element('button', ['btn'], 'Открыть')
+    const upload = document.querySelector('#upload')
     upload.style.display = 'none'
-
-    if (options.multi) {
-        input.setAttribute('multiple', true)
-    }
-
-    if (options.accept && Array.isArray(options.accept)) {
-        input.setAttribute('accept', options.accept.join(','))
-    }
-
     input.insertAdjacentElement('afterend', preview)
-    input.insertAdjacentElement('afterend', upload)
-    input.insertAdjacentElement('afterend', open)
-
-    const triggerInput = () => input.click()
+    // const triggerInput = () => input.click()
 
     const changeHandler = event => {
         if (!event.target.files.length) {
@@ -112,11 +99,11 @@ module.exports = function upload(selector, options = {}) {
         onUpload(files, previewInfo)
     }
 
-    open.addEventListener('click', triggerInput)
+    // open.addEventListener('click', triggerInput)
     input.addEventListener('change', changeHandler)
     preview.addEventListener('click', removeHandler)
     upload.addEventListener('click', uploadHandler)
-}
+// }
 
 // module.exports = upload('#file', {
 //     multi: true,

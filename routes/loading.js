@@ -14,7 +14,9 @@ loadRouter.get('/',  (req, res)  => {
     const load = React.createElement(Load, {title: 'LoadPic'});
     const html = ReactDOMServer.renderToStaticMarkup(load);
     res.write('<!DOCTYPE html>');
+    // console.log(req.local.user.id)
     res.end(html);
+
 })
 
 loadRouter.post('/', upload.single("filedata"), async function  (req, res, next) {
@@ -24,7 +26,7 @@ loadRouter.post('/', upload.single("filedata"), async function  (req, res, next)
     if(!filedata)
         res.send("Ошибка при загрузке файла");
     else
-        await Image.create({title: filedata.originalname, image_url: filedata.puth})
+        await Image.create({user_id: res.locals.user.id, title: filedata.originalname, image_url: filedata.path})
         res.send("Файл загружен");
 })
 module.exports = loadRouter;

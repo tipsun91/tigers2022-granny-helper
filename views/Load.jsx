@@ -9,9 +9,9 @@ module.exports = function Load({ title }) {
         <div className="container">
             <div className="card">
                 <form action="/load" method="post" encType="multipart/form-data">
-                    <input type="file" name="filedata" className="btn" />
+                    <input type="file" id="file" name="filedata" className="btn" />
                     {/*<button className="btn" type="file">Открыть</button>*/}
-                    <input type="submit" value="Send" />
+                    <input type="submit"  id='upload' value="Загрузить" className="btn primary" />
                 </form>
             </div>
         </div>
