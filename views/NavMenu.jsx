@@ -7,9 +7,9 @@ module.exports = function NavMenu({ user }) {
         <div className="container-fluid">
           <a className="navbar-brand">Бабушка Helper</a>
           <form className="d-flex" role="search">
-            {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> */}
+
+            <button className="btn btn-outline-success" type="submit">Загрузить</button>
             <button className="btn btn-outline-success" type="submit">Выйти</button>
-            <button className="btn btn-outline-success" type="submit">Ddfsd</button>
           </form>
         </div>
       </nav>
