@@ -5,11 +5,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+/* .container {
     padding-top: 5rem;
     width: 800px;
     margin: 0 auto;
-}
+} */
 
 .card {
     border-radius: 6px;
