@@ -10,7 +10,9 @@ module.exports = function Layout({ children, title }) {
       <head>
         <meta charSet="UTF-8" />
 
+        <link rel="stylesheet" href="/css/bootstrap.min.css.map" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <script defer src="/js/bootstrap.bundle.min.map" />
         <script defer src="/js/bootstrap.bundle.min.js" />
 
         <script defer src="/js/client.js" />
@@ -24,11 +26,7 @@ module.exports = function Layout({ children, title }) {
         <title>{title}</title>
       </head>
 
-      <body>
-        <div className="container">
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
 
     </html>
   );
