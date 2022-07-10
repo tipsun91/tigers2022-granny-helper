@@ -127,6 +127,8 @@ a:visited {
   color: rgb(0, 8, 8);
 }
 
+
+
 .reg_content {
   margin-bottom: 20px;
 }
@@ -185,4 +187,56 @@ a:visited {
 
 .h1 {
   text-transform: uppercase;
+}
+
+.rename {
+  font-family: 'Comfortaa', cursive;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* border: 3px solid rgb(230, 222, 1); */
+  border-radius: 30px;
+  background-color: rgb(242, 242, 86);
+  opacity: 80%;
+  /* margin: 50px 500px; */
+  padding-top: 50px;
+  padding-bottom: 60px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.797);
+  /* min-height: 500px; */
+  font-size: 50px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: rgb(0, 8, 8);
+}
+
+.header {
+  border-radius: 20px;
+}
+
+.role {
+  background-color: antiquewhite;
+  border: 2px solid rgb(193, 51, 167);
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn_nav {
+  min-width: 300px;
+  height: 60px;
+  background-color: rgb(193, 51, 167);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+.btn_nav:hover {
+  background-color: rgb(2, 179, 162);
 }

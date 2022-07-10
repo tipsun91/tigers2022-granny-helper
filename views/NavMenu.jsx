@@ -5,11 +5,11 @@ module.exports = function NavMenu({ user }) {
     <header className="header">
       <nav className="navbar bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand">Бабушка Helper</a>
+          <a className="navbar-brand">Granny Helper</a>
           <form className="d-flex" role="search">
 
-            <button className="btn btn-outline-success" type="submit"><a href="/load">Загрузить</a></button>
-            <button className="btn btn-outline-success" type="submit"><a href="/">Выйти</a></button>
+            <button className="btn_nav btn-outline-success" type="submit"><a href="/load">Загрузить</a></button>
+            <button className="btn_nav btn-outline-success" type="submit"><a href="/">Выйти</a></button>
           </form>
         </div>
       </nav>
