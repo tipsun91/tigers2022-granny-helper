@@ -8,7 +8,6 @@ module.exports = function HomeGranson({ text, user }) {
     <Layout>
       <NavMenu user={user} />
       <h1>Картинки</h1>
-
     </Layout>
   );
 };
